@@ -1,0 +1,9 @@
+# ignore old version of codes
+RSS Feed/
+
+# ignore crendentials and token
+*.json
+
+# ignore python and Jupyter notebook logs
+.ipynb_checkpoints
+__pycache__
