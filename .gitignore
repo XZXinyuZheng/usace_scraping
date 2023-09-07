@@ -4,6 +4,12 @@ RSS Feed/
 # ignore crendentials and token
 *.json
 
+# ignore tools to faciliate my work
+new_orleans_weblist.csv
+mobile_weblist.csv
+jacksonville_weblist.csv
+galveston_weblist.csv
+
 # ignore python and Jupyter notebook logs
 .ipynb_checkpoints
 __pycache__
