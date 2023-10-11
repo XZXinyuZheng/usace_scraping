@@ -97,14 +97,14 @@ def get_web_character_mitigation(web_text):
     Get all info in "CHRACATER OF WORK"
     """
     
-    if web_text.find(r'(Mitigation|MITIGATION)') != -1:
+    if any(w in web_text for w in ["MITIGATION", "Mitigation"]):
         if any(w in web_text for w in ["CHARACTER", "Character"]):
             try:
-                web__character = re.search(r'(?<=(CHARACTER OF WORK|Character of Work):)\s*.+(?=(MITIGATION|Mitigation))', web_text).group().strip()
+                web_character = re.search(r'(?<=(CHARACTER OF WORK|Character of Work):)\s*.+?(?=(MITIGATION|Mitigation))', web_text).group().strip()
             except Exception as e:
-                web__character = "ERROR: " + str(e)
+                web_character = "ERROR: " + str(e)
         else:
-            web__character = None
+            web_character = None
         try:
             web_mitigation = re.search(r'(?<=(MITIGATION|Mitigation):)\s*.+', web_text).group().strip()
         except Exception as e:
@@ -117,7 +117,7 @@ def get_web_character_mitigation(web_text):
             except Exception as e:
                 web_character = "ERROR: " + str(e)
         else:
-            web__character = None
+            web_character = None
     return web_character, web_mitigation        
 
 
